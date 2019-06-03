@@ -1,7 +1,7 @@
 ## box-shadow 속성
 
 ```css
-box-shadow: 5px, 5px, 5px, 5px rgba(0, 0, 0, 0.2);
+box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 ```
 처음부터 Horizontal, Vertical, Blur, Spread 순서이고,
 
