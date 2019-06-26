@@ -34,6 +34,7 @@ for($i = max(0, count($file)-5); $i < count($file); $i++) { //파일의 하단 5
 }
 
 $url = '1.000.00.18/monitoring/log/top/No.26/getTopLog.php'; // 미리 생성 해 둔 getTopLog.php에 post데이터 전송
+// php curl 사용할시 php curl이 깔려있는지 확인할것. 없으면 apt-get install php-curl
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_POST, 1);
