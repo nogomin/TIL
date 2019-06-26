@@ -50,6 +50,7 @@ curl_close($ch);
 - A서버에서 B에서 보내준 post 데이터 처리
 
 ```php
+// 가장 먼저 보내는 서버와 소유자와 그룹명 맞는지부터 확인할것.
 <?php
 $date = date("Ymd");
 $fileName = "topLog-{$date}.log";
