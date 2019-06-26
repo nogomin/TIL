@@ -7,7 +7,8 @@
     없다면 useradd test 형식으로 유저 추가 -> 확인은 /etc/passwd
 
 ***
-2. nginx site-available
+2. nginx site-available설정
+
     /etc/nginx/sites-available/default로 이동
 
     root /home으로 변경
@@ -18,6 +19,7 @@
     소유자, 그룹명도 가급적 현재 nginx 설정의 유저와 맞춰준다.
 ***
 3. php fpm pool 설정
+
     /etc/php/7.0/fpm/pool.d/www.conf로 이동
 
     user와 group을 바꿔준다.
