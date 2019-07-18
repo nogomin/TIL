@@ -62,8 +62,13 @@
                 include         /etc/nginx/fastcgi_params;
         }
     ```
+    ---    
     
-     * service nginx restart
+    * /etc/php/7.0/fpm/pool.d/www.conf로 이동
+    
+    * user, group을 바꿔주고 가장 중요한 listen에 php-fpm.sock 경로를 적어준다.
+    
+    * service nginx restart
 ***
 
 
