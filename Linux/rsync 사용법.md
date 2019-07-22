@@ -45,3 +45,8 @@ host allow = xxx.xxx.xxx.xxx             #해당 호스트만 접근 가능
 max connection = 100                     #최대 연결 개수
 timeout 300                              #시간 초과 설정   
 ```
+
+5. rsync 재시작
+```shell
+/etc/init.d/rsync restart
+```
