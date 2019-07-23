@@ -1,6 +1,6 @@
 ### lsync && rsync
 
-1. 메인(바꿀파일이 있는 곳) 서버에 lsync 설치
+1. 메인(원본파일이 있는 곳) 서버에 lsync 설치
 ```shell
 lsyncd -version
 sudo apt install lsyncd
@@ -26,12 +26,17 @@ sync {
 }
 ```
 ---
-3. 서브(바꿀 파일이 있는곳) 서버에 rsync 설치
+3. lysncd 재시작 
+```shell
+service lsyncd restart
+```
+---
+4. 서브(복제할 대상) 서버에 rsync 설치
 ```shell
 apt-get install -y rsync
 ```
 ---
-4. /etc/rsyncd.conf 이동 없을시 파일 생성하기
+5. /etc/rsyncd.conf 이동 없을시 파일 생성하기
 ```shell
 log file = /var/log/rsync.log            #로그파일 설정
 [backup]                                 #미러링 될 이름 (Destination)
@@ -45,8 +50,14 @@ host allow = xxx.xxx.xxx.xxx             #해당 호스트만 접근 가능
 max connection = 100                     #최대 연결 개수
 timeout 300                              #시간 초과 설정   
 ```
-
-5. rsync 재시작
+---
+6. rsync 재시작
 ```shell
 /etc/init.d/rsync restart
+```
+---
+7. 서브(복제할 대상) 서버에서 rsync 확인
+```shell
+rsync -avz 원본.파일.있는.서버.아이피::미러링될이름 파일경로
+// 예시 : rsync -avz 192.168.10.01::test-ko /home/test
 ```
