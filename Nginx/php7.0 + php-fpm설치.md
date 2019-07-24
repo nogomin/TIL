@@ -38,7 +38,15 @@
     
     * sudo apt-get install php7.0-mysql (MySQL/MariaDB 이용시)
     
-    * sudo apt-get install php7.0-gd php7.0-curl php7.0-mbstring php7.0-xml php7.0-mcrypt (많이 사용되는 모듈들)
+    * sudo apt-get install php7.0-gd php7.0-curl php7.0-mbstring php7.0-xml php7.0-pgsql php7.0-json php7.0-cgi (많이 사용되는 모듈들)
+    
+    * /etc/php/7.0/fpm/php.ini로 이동
+    
+    ```shell
+        short_open_tag = On
+        upload_man_filesize = 50M
+        date.timezone = Asia/Seoul
+    ```
     
     * sudo service php7.0-fpm restart
     
