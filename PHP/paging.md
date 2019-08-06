@@ -56,7 +56,7 @@ class Page
         }
 
         // 다음.
-        if ( $next > 0 ) {
+        if ( $next > 0 && $next <= $totalPage ) {
             $pageLinks .= "<li onclick='move_page(\"{$next}\")'><img src='.images/move_next.png' alt='다음' /></li>";
         }
         else {
